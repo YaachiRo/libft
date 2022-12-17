@@ -6,7 +6,7 @@
 /*   By: idelfag <idelfag@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 00:32:12 by idelfag           #+#    #+#             */
-/*   Updated: 2022/11/30 10:55:25 by idelfag          ###   ########.fr       */
+/*   Updated: 2022/11/11 10:36:39 by idelfag          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void		*ft_calloc(size_t count, size_t size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 void		ft_putchar_fd(char c, int fd);
 void		ft_putstr_fd(char *s, int fd);
-int			ft_putnbr_fd(int n, int fd);
+void		ft_putnbr_fd(int n, int fd);
 void		ft_putendl_fd(char *s, int fd);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_strjoin(char const *s1, char const *s2);
