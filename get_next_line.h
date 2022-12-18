@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idelfag <idelfag@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 09:44:56 by idelfag           #+#    #+#             */
-/*   Updated: 2022/12/17 06:15:20 by idelfag          ###   ########.fr       */
+/*   Created: 2022/12/17 05:14:51 by idelfag           #+#    #+#             */
+/*   Updated: 2022/12/18 08:53:17 by idelfag          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 5
+# endif
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	char	*ptr;
-	size_t	i;
+# include <limits.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
 
-	i = 0;
-	if (count > 0 && size > SIZE_T_MAX / count)
-		return (NULL);
-	ptr = malloc(size * count);
-	if (!ptr)
-		return (NULL);
-	while (i < (size * count))
-	{
-		ptr[i] = '\0';
-		i++;
-	}
-	return ((void *)ptr);
-}
+char	*str_join(char *str1, char *str2);
+char	*str_cpy(char *dst, char *src);
+size_t	str_len(char *str);
+void	*put_zero(size_t size, size_t count);
+char	*str_search(char *str, char c);
+char	*get_next_line(int fd);
+#endif

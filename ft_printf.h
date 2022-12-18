@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: idelfag <idelfag@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 09:44:56 by idelfag           #+#    #+#             */
-/*   Updated: 2022/12/17 06:15:20 by idelfag          ###   ########.fr       */
+/*   Created: 2022/12/08 03:38:16 by idelfag           #+#    #+#             */
+/*   Updated: 2022/12/08 04:45:15 by idelfag          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	char	*ptr;
-	size_t	i;
+# include <unistd.h>
+# include <stdarg.h>
 
-	i = 0;
-	if (count > 0 && size > SIZE_T_MAX / count)
-		return (NULL);
-	ptr = malloc(size * count);
-	if (!ptr)
-		return (NULL);
-	while (i < (size * count))
-	{
-		ptr[i] = '\0';
-		i++;
-	}
-	return ((void *)ptr);
-}
+int	ft_putchar(char c);
+int	ft_putstr(const char *s);
+int	ft_putnbr(int n);
+int	ft_put_unsigned(unsigned int n);
+int	ft_put_hexa_low(unsigned long n);
+int	ft_put_hexa_up(unsigned long n);
+int	ft_put_adress(unsigned long n);
+int	ft_printf(const char *s, ...);
+
+#endif
